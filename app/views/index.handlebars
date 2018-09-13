@@ -1,0 +1,24 @@
+<div class="bg">
+    <h1 class="title">Game name</h1>
+    <form class="input">
+        User email:<br>
+        <input type="text" id="userid">
+        <br> User password:<br>
+        <input type="password" id="psw">
+        <br>
+        <br>
+        <button id="adduser" type="button">SUBMIT</button>
+
+    </form>
+<script>$("#adduser").on("click",function(){
+  console.log("=====++++++======")
+  $.ajax({
+    type: "POST",
+    url: "/api/Players",
+    data: {
+      username: $("#userid").val().trim(),
+      password: $("#psw").val().trim()
+    }
+  })
+})</script>
+</div>
